@@ -10,18 +10,31 @@ import turnpoints
 import pandas as pd
 import matplotlib
 
-app_ui = ui.page_fluid(
+app_ui = ui.page_fillable(
 
-    ui.h1("Upload a Garmin FIT file and analyze it"),
+    ui.h1("Upload a Garmin FIT file for analysis"),
     ui.input_radio_buttons("source_data", label = "Source", 
-                           choices = {"sample": "Sample data", "upload": "Local file"}, selected = "sample"),
+                           choices = {"sample": "Sample data", "upload": "Upload a file"}, selected = "sample"),
     ui.panel_conditional(
         "input.source_data == 'upload'", 
         ui.input_file("filename", "Select a FIT file to analyze", accept = ".fit"),
     ),
-    ui.output_ui("map"),
-    ui.output_ui("colormap"),
-    ui.output_plot("speed_plot"),
+    ui.layout_columns(
+        ui.card(  
+                ui.card_header("Card 1 header"),
+                # ui.p("Card 1 body"),
+                # ui.input_slider("slider", "Slider", 0, 10, 5),
+                ui.output_ui("map"),
+                ui.output_ui("colormap"),
+            ),  
+        ui.card(  
+                ui.card_header("Card 1 header"),
+                # ui.p("Card 1 body"),
+                # ui.input_slider("slider", "Slider", 0, 10, 5),
+                ui.output_plot("speed_plot"),
+            ),   
+        col_widths=(6, 6),  
+    ),
 )
 
 
