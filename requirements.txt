@@ -1,0 +1,8 @@
+fitdecode
+jupyter
+pandas
+folium
+rdp
+branca
+shiny
+matplotlib

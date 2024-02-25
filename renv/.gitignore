@@ -1,0 +1,16 @@
+cellar/
+sandbox/
+library/
+local/
+lock/
+python/
+staging/
+
+.Rhistory
+.REnviron
+renv/
+__pycache__/
+quarto
+.Rproj.user/
+.venv/*
+
