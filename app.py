@@ -13,22 +13,22 @@ import matplotlib
 app_ui = ui.page_fluid(
 
     ui.h1("Upload a Garmin FIT file for analysis"),
-    ui.input_radio_buttons("source_data", label = "Source", 
-                           choices = {"sample": "Sample data", "upload": "Upload a file"}, selected = "sample"),
+    ui.input_radio_buttons("source_data", label = "Source data", 
+                           choices = {"sample": "Sample file", "upload": "Upload a file"}, selected = "sample"),
     ui.panel_conditional(
         "input.source_data == 'upload'", 
         ui.input_file("filename", "Select a FIT file to analyze", accept = ".fit"),
     ),
     ui.layout_columns(
         ui.card(  
-                ui.card_header("Card 1 header"),
+                ui.card_header("Map with detected turnpoints"),
                 # ui.p("Card 1 body"),
                 # ui.input_slider("slider", "Slider", 0, 10, 5),
                 ui.output_ui("map"),
                 ui.output_ui("colormap"),
             ),  
         ui.card(  
-                ui.card_header("Card 1 header"),
+                ui.card_header("Average speed between turnpoints"),
                 # ui.p("Card 1 body"),
                 # ui.input_slider("slider", "Slider", 0, 10, 5),
                 ui.output_plot("speed_plot"),
