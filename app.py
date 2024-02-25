@@ -10,7 +10,7 @@ import turnpoints
 import pandas as pd
 import matplotlib
 
-app_ui = ui.page_fillable(
+app_ui = ui.page_fluid(
 
     ui.h1("Upload a Garmin FIT file for analysis"),
     ui.input_radio_buttons("source_data", label = "Source", 
